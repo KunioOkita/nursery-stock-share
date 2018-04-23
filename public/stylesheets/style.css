@@ -1,8 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.list-label {
 }
 
-a {
-  color: #00B7FF;
+.btn-plus-counter,
+.btn-minus-counter,
+.item-count-label,
+.item-count-val
+{
+    margin-right: 10px;
+}
+
+.item-count-val {
+    width: 30px;
+    border: 1px solid gray;
+    align-text: right;
 }

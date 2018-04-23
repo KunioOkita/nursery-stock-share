@@ -5,7 +5,7 @@ const StockData = require('../models/StockData.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express not exists okita' });
+  res.render('index', { title: '保育園ストックリスト' });
 });
 
 // get stock by family_id

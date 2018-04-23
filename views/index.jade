@@ -2,4 +2,21 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  button(type="button" class="btn btn-block btn-success update-data") Update
+  ul(class='list-group')
+    li(class='list-group-item')
+      span(class='list-label') オムツ
+      button(type="button" class="btn btn-sm btn-danger btn-plus-counter float-right" aria-label="Left Align")
+        span(class="oi oi-plus" title="icon name" aria-hidden="true")
+      button(type="button" class="btn btn-sm btn-primary btn-minus-counter float-right" aria-label="Left Align")
+        span(class="oi oi-minus" title="icon name" aria-hidden="true")
+      span(class='item-count-val float-right') 1
+      span(class='item-count-label float-right') 個数
+    li(class='list-group-item')
+      span(class='list-label') お食事エプロン
+      button(type="button" class="btn btn-sm btn-danger btn-plus-counter float-right" aria-label="Left Align")
+        span(class="oi oi-plus" title="icon name" aria-hidden="true")
+      button(type="button" class="btn btn-sm btn-primary btn-minus-counter float-right" aria-label="Left Align")
+        span(class="oi oi-minus" title="icon name" aria-hidden="true")
+      span(class='item-count-val float-right') 1
+      span(class='item-count-label float-right') 個数
