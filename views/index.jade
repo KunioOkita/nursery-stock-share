@@ -1,22 +1,30 @@
 extends layout
 
 block content
-  h1= title
-  button(type="button" class="btn btn-block btn-success update-data") Update
+  h1(class="text-center")= title
+  button(type="button" id="update-stocks" class="btn btn-block btn-success") 更新 (最終更新日時：#{updateData})
   ul(class='list-group')
-    li(class='list-group-item')
-      span(class='list-label') オムツ
-      button(type="button" class="btn btn-sm btn-danger btn-plus-counter float-right" aria-label="Left Align")
-        span(class="oi oi-plus" title="icon name" aria-hidden="true")
-      button(type="button" class="btn btn-sm btn-primary btn-minus-counter float-right" aria-label="Left Align")
-        span(class="oi oi-minus" title="icon name" aria-hidden="true")
-      span(class='item-count-val float-right') 1
-      span(class='item-count-label float-right') 個数
-    li(class='list-group-item')
-      span(class='list-label') お食事エプロン
-      button(type="button" class="btn btn-sm btn-danger btn-plus-counter float-right" aria-label="Left Align")
-        span(class="oi oi-plus" title="icon name" aria-hidden="true")
-      button(type="button" class="btn btn-sm btn-primary btn-minus-counter float-right" aria-label="Left Align")
-        span(class="oi oi-minus" title="icon name" aria-hidden="true")
-      span(class='item-count-val float-right') 1
-      span(class='item-count-label float-right') 個数
+    for item in stocks
+      li(class='list-group-item' data-id='#{item["item_name"]}')
+        span(class='list-label') #{item["item_name"]}
+        button(type="button" class="btn btn-sm btn-danger btn-plus-counter float-right" aria-label="Left Align")
+          span(class="oi oi-plus" title="icon name" aria-hidden="true")
+        button(type="button" class="btn btn-sm btn-primary btn-minus-counter float-right" aria-label="Left Align")
+          span(class="oi oi-minus" title="icon name" aria-hidden="true")
+        span(class='item-count-val float-right') #{item["item_num"]}
+        span(class='item-count-label float-right') 個数:
+  button(type="button" class="btn btn-block btn-primary float-center" data-toggle="modal" data-target="#addItemModal")
+    span(class="oi oi-plus" title="icon name" aria-hidden="true")
+  div(class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+    div(class="modal-dialog" role="document")
+      div(class="modal-content")
+        div(class="modal-header")
+          h5(class="modal-title" id="addItemModalLabel") 新規アイテム追加
+          button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+            span(aria-hidden="true") &times;
+        div(class="modal-body")
+          span アイテム名：&nbsp;
+          input(type="text" class="item-name")
+        div(class="modal-footer")
+          button(type="button" class="btn btn-secondary" data-dismiss="modal") 閉じる
+          button(type="button" class="btn btn-primary add-item") 追加

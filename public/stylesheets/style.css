@@ -1,4 +1,5 @@
-.list-label {
+.update-data {
+    margin-bottom: 10px;
 }
 
 .btn-plus-counter,
@@ -11,6 +12,5 @@
 
 .item-count-val {
     width: 30px;
-    border: 1px solid gray;
     align-text: right;
 }
