@@ -27,7 +27,7 @@ router.get('/:family_id', function(req, res, next) {
     // 存在しない場合はデフォルトのデータを作成
     if (!findData) {
 
-      let stockData = new StockDate();
+      let stockData = new StockData();
       stockData.family_id = req.params.family_id;
       stockData.update_date = Date.now();
       stockData.stocks = [];
