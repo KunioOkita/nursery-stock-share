@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1(class="text-center")= title
+  h1(class="text-center main-title")= title
   button(type="button" id="update-stocks-latest" class="btn btn-block btn-info") 最新情報取得 (更新日時：#{updateData})
   ul(class='list-group')
     for item in stocks

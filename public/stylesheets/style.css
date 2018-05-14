@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'yomogifont';
+  src: url('/fonts/yomogifont.otf') format('opentype');
+}
+
+body {
+    font-family: 'yomogifont', cursive;
+}
+
+h1.main-title {
+    font-family: 'yomogifont', cursive;
+}
+
 .update-data {
     margin-bottom: 10px;
 }
