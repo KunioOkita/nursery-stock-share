@@ -29,7 +29,7 @@ router.get('/:family_id', function(req, res, next) {
                  {
                    title: 'Stock List',
                    updateData: '',
-                   items: []
+                   stocks: []
                  });
     } else {
       let dt = new Date(findData.update_date);

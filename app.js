@@ -40,7 +40,7 @@ app.use(function(err, req, res, next) {
 });
 
 // connected db
-const mongoUrl = process.env.PORT || 'mongodb://localhost/nursery_stock_share_db';
+const mongoUrl = process.env.MONGODB_URL || 'mongodb://localhost/nursery_stock_share_db';
 mongoose.connect(mongoUrl);
 mongoose.Promise = global.Promise;
 
