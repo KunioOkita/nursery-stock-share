@@ -7,9 +7,17 @@ $(() => {
   // プラス・マイナスボタンのイベントリセット
   resetPlusMinusEvent();
 
-  // 更新
-  $('#update-stocks').click(() => {
-    updateStocks(getFamilyIdFromURL());
+  // 最新情報取得
+  $('#update-stocks-latest').click(() => {
+    location.reload();
+  });
+
+  // 上書き保存
+  $('#save-stocks').click(() => {
+    let res = confirm("情報を上書きしても良いですか。");
+    if (res === true) {
+      updateStocks(getFamilyIdFromURL());
+    }
   });
 
   $('.add-item').click(() => {

@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1(class="text-center")= title
-  button(type="button" id="update-stocks" class="btn btn-block btn-success") 更新 (最終更新日時：#{updateData})
+  button(type="button" id="update-stocks-latest" class="btn btn-block btn-info") 最新情報取得 (更新日時：#{updateData})
   ul(class='list-group')
     for item in stocks
       li(class='list-group-item' data-id='#{item["item_name"]}')
@@ -15,6 +15,7 @@ block content
         span(class='item-count-label float-right') 個数:
   button(type="button" class="btn btn-block btn-primary float-center" data-toggle="modal" data-target="#addItemModal")
     span(class="oi oi-plus" title="icon name" aria-hidden="true")
+  button(type="button" id="save-stocks" class="btn btn-block btn-success") 上書き保存
   div(class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
     div(class="modal-dialog" role="document")
       div(class="modal-content")
