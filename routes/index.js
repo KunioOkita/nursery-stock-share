@@ -24,13 +24,28 @@ router.get('/:family_id', function(req, res, next) {
   StockData.findOne({
     family_id: req.params.family_id
   }, (err, findData) => {
+    // 存在しない場合はデフォルトのデータを作成
     if (!findData) {
-      res.render('index',
-                 {
-                   title: 'Stock List',
-                   updateData: '',
-                   stocks: []
-                 });
+
+      let stockData = new StockDate();
+      stockData.family_id = req.params.family_id;
+      stockData.update_date = Date.now();
+      stockData.stocks = [];
+
+      stockData.save((err) => {
+        if (err) {
+          res.status(500, err);
+          return;
+        }
+
+        res.render('index',
+                   {
+                     title: 'Stock List',
+                     updateData: '',
+                     stocks: []
+                   });
+
+      });
     } else {
       let dt = new Date(findData.update_date);
       res.render('index',
