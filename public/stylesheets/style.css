@@ -5,10 +5,12 @@
 
 body {
     font-family: 'yomogifont', cursive;
+    font-weight: bold;
 }
 
 h1.main-title {
     font-family: 'yomogifont', cursive;
+    font-weight: bold;
 }
 
 .update-data {
